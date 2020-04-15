@@ -19,7 +19,7 @@ resource "kubernetes_pod" "voting_app_pod" {
       }
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_service" "voting_service" {
@@ -47,7 +47,7 @@ resource "kubernetes_service" "voting_service" {
 
     type = "LoadBalancer"
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_pod" "redis_pod" {
@@ -71,7 +71,7 @@ resource "kubernetes_pod" "redis_pod" {
       }
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_service" "redis" {
@@ -97,7 +97,7 @@ resource "kubernetes_service" "redis" {
       name = "redis-pod"
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_pod" "worker_app_pod" {
@@ -117,7 +117,7 @@ resource "kubernetes_pod" "worker_app_pod" {
       image = "dockersamples/examplevotingapp_worker"
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_pod" "postgress_pod" {
@@ -141,7 +141,7 @@ resource "kubernetes_pod" "postgress_pod" {
       }
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_service" "db" {
@@ -167,7 +167,7 @@ resource "kubernetes_service" "db" {
       name = "postgress-pod"
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_pod" "result_app_pod" {
@@ -191,7 +191,7 @@ resource "kubernetes_pod" "result_app_pod" {
       }
     }
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
 resource "kubernetes_service" "result_service" {
@@ -219,6 +219,6 @@ resource "kubernetes_service" "result_service" {
 
     type = "LoadBalancer"
   }
-  depends_on = [null_resource.delay_pod_creation]
+  depends_on = ["null_resource.delay_pod_creation"]
 }
 
