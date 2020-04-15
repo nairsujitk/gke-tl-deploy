@@ -48,7 +48,7 @@ resource "kubernetes_service" "twistlock_console" {
       name = "twistlock-console"
     }
 
-    type = var.console_service_type
+    type = "${var.console_service_type}"
   }
   depends_on = ["kubernetes_namespace.twistlock"]
 }
