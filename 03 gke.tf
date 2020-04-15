@@ -1,16 +1,16 @@
 resource "google_container_cluster" "gke-cluster" {
-  name = var.cluster_name
-  location = var.region_zone
+  name = "${var.cluster_name}"
+  location = "${var.region_zone}"
 
   initial_node_count = 3
 
 
-  network    = google_compute_network.gkelan.name
-  subnetwork = google_compute_subnetwork.gkelan-net.name
+  network    = "${google_compute_network.gkelan.name}"
+  subnetwork = "${google_compute_subnetwork.gkelan-net.name}"
 
   master_auth {
-    username = var.username
-    password = var.password
+    username = "${var.username}"
+    password = "${var.password}"
   }
 
   node_config {
