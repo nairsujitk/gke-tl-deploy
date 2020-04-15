@@ -4,8 +4,8 @@ terraform {
 }
 
 provider "google" {
-  credentials = var.gcp_credentials
-  region      = var.region
-  project     = var.project_name
-  zone        = var.region_zone
+  credentials = "${var.gcp_credentials}"
+  region      = "${var.region}"
+  project     = "${var.project_name}"
+  zone        = "${var.region_zone}"
 }
