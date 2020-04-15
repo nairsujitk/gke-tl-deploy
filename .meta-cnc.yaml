@@ -30,7 +30,6 @@ labels:
 variables:
   - name: cred_file_name
     description: Path/Filename of the Google service account credential file
-    default: 
     type_hint: Path/Filename of the Google service account credential file
   - name: project_name
     description: ID of the GCP project
