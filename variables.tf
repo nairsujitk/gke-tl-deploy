@@ -17,6 +17,7 @@ variable "project_name" {
 
 variable "gcp_credentials" {
   description = "GCP Credential details"
+  type = "string"
 }
 
 variable "password" {
