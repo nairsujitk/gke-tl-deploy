@@ -7,12 +7,13 @@ output "Voting_Result-ip" {
 }
 
 
-locals {
-    console_mgmt_ip = "${kubernetes_service.twistlock_console.load_balancer_ingress[0].ip}"
-}
+#locals {
+#    console_mgmt_ip = "${kubernetes_service.twistlock_console.load_balancer_ingress[0].ip}"
+#}
 
 output "PCC_Console-IP" {
-    value = "${local.console_mgmt_ip}"
+    #value = "${local.console_mgmt_ip}"
+    value = "${kubernetes_service.twistlock_console.load_balancer_ingress[0].ip}"
 }
 
 output "PCC_Conslole-Username" {
