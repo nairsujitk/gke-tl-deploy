@@ -36,7 +36,7 @@ resource "null_resource"  "configure_console" {
     EOT
   }
 
-  depends_on = [kubernetes_deployment.twistlock_console]
+  depends_on = ["kubernetes_deployment.twistlock_console"]
 }
 
 
